@@ -12,8 +12,11 @@
             "program": "${workspaceFolder}/src/AdventOfCode2024/bin/Debug/net9.0/AdventOfCode2024.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/AdventOfCode2024",
-            "console": "internalConsole",
-            "stopAtEntry": false
+            "console": "externalTerminal",
+            "stopAtEntry": false,
+            "logging": {
+                "moduleLoad": false
+            }
         },
         {
             "name": ".NET Core Attach",
