@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using AdventOfCode2024.Missions;
+using AdventOfCode2024.Puzzles;
 using Autofac;
 
 namespace AdventOfCode2024;
@@ -11,6 +11,7 @@ class Program
     {
         Console.WriteLine("Welcome to Advent of Code 2024!");
         Console.WriteLine("-------------------------------");
+        Console.WriteLine();
 
         var builder = new ContainerBuilder();
 
@@ -33,10 +34,15 @@ class Program
                 break;
             }
 
-            if (container.TryResolveNamed<IMission>(missionNumber, out var mission))
+            if (container.TryResolveNamed<IPuzzle>(missionNumber, out var mission))
             {
-                var output = await mission.Execute();
-                Console.WriteLine(output);
+                await mission.Prepare();
+
+                var solution1 = await mission.SolvePart1();
+                Console.WriteLine($"Part 1: {solution1}");
+
+                var solution2 = await mission.SolvePart2();
+                Console.WriteLine($"Part 2: {solution2}");
             }
             else
             {

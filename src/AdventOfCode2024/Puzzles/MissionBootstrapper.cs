@@ -1,11 +1,11 @@
 using Autofac;
 
-namespace AdventOfCode2024.Missions;
+namespace AdventOfCode2024.Puzzles;
 
 public static class MissionBootStrapper
 {
     public static void Register(ContainerBuilder builder)
     {
-        builder.RegisterType<ReconcileLocationLists>().Named<IMission>("1");
+        builder.RegisterType<ReconcileLocationLists>().Named<IPuzzle>("1");
     }
 }
