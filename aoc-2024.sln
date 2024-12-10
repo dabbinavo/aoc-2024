@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84FC09D1-74A2-44E5-9B30-4AD815A11420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2024", "src\AdventOfCode2024\AdventOfCode2024.csproj", "{443487CC-229E-4836-AFDD-6786BBB64789}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{443487CC-229E-4836-AFDD-6786BBB64789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443487CC-229E-4836-AFDD-6786BBB64789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443487CC-229E-4836-AFDD-6786BBB64789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443487CC-229E-4836-AFDD-6786BBB64789}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{443487CC-229E-4836-AFDD-6786BBB64789} = {84FC09D1-74A2-44E5-9B30-4AD815A11420}
+	EndGlobalSection
+EndGlobal
