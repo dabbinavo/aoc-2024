@@ -9,13 +9,13 @@ public class HistorianHysteriaTests
     public static readonly List<int> expectedList2 = [4, 3, 5, 3, 9, 3];
 
     [Fact]
-    public async Task FetchInputTest()
+    public async Task ParseInputTest()
     {
         // Arrange
         var uri = "AdventOfCode2024Tests.Resources.day._1.input";
 
         // Act
-        var (list1, list2) = await HistorianHysteria.LoadLists(uri, typeof(HistorianHysteriaTests).Assembly);
+        var (list1, list2) = await HistorianHysteria.ParseInput(uri, typeof(HistorianHysteriaTests).Assembly);
 
         // Assert
         Assert.Equal(expectedList1, list1);
@@ -23,7 +23,7 @@ public class HistorianHysteriaTests
     }
 
     [Fact]
-    public void ReconcileListsTest()
+    public void CalculateTotalDistanceTest()
     {
         // Act
         var result = HistorianHysteria.CalculateTotalDistance(expectedList1, expectedList2);

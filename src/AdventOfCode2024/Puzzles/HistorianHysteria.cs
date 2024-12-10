@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.RegularExpressions;
+using AdventOfCode2024.Helpers;
 
 namespace AdventOfCode2024.Puzzles;
 
@@ -11,7 +12,7 @@ public partial class HistorianHysteria : IPuzzle
 
     public async Task Prepare()
     {
-        (List1, List2) = await LoadLists("AdventOfCode2024.Resources.day._1.input");
+        (List1, List2) = await ParseInput("AdventOfCode2024.Resources.day._1.input");
     }
 
     public Task<string> SolvePart1()
@@ -44,16 +45,11 @@ public partial class HistorianHysteria : IPuzzle
     }
 
     
-    public static async Task<(List<int>, List<int>)> LoadLists(string uri, Assembly? assembly = null)
+    public static async Task<(List<int>, List<int>)> ParseInput(string uri, Assembly? assembly = null)
     {
         assembly ??= typeof(HistorianHysteria).Assembly;
         
-        await using var stream = assembly.GetManifestResourceStream(uri)
-            ?? throw new Exception($"Resource {uri} not found.");
-        
-        using var reader = new StreamReader(stream);
-        
-        var input = await reader.ReadToEndAsync();
+        var input = await ResourceHelper.LoadResource(uri, assembly);
 
         var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
 
