@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2024.Puzzles;
 
-public partial class ReconcileLocationLists : IPuzzle
+public partial class HistorianHysteria : IPuzzle
 {
     private List<int> List1 {get; set;} = [];
 
@@ -46,7 +46,7 @@ public partial class ReconcileLocationLists : IPuzzle
     
     public static async Task<(List<int>, List<int>)> LoadLists(string uri, Assembly? assembly = null)
     {
-        assembly ??= typeof(ReconcileLocationLists).Assembly;
+        assembly ??= typeof(HistorianHysteria).Assembly;
         
         await using var stream = assembly.GetManifestResourceStream(uri)
             ?? throw new Exception($"Resource {uri} not found.");

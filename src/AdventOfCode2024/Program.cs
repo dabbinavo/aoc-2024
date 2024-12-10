@@ -15,38 +15,38 @@ class Program
 
         var builder = new ContainerBuilder();
 
-        MissionBootStrapper.Register(builder);
+        PuzzleBootStrapper.Register(builder);
 
         var container = builder.Build();
 
         while (true)
         {
-            Console.Write("Enter the mission number [1...24] or 'exit': ");
-            var missionNumber = Console.ReadLine();
+            Console.Write("Enter the puzzle number [1...24] or 'exit': ");
+            var puzzleNumber = Console.ReadLine();
 
-            if (missionNumber == null)
+            if (puzzleNumber == null)
             {
                 continue;
             }
 
-            if (missionNumber == "exit")
+            if (puzzleNumber == "exit")
             {
                 break;
             }
 
-            if (container.TryResolveNamed<IPuzzle>(missionNumber, out var mission))
+            if (container.TryResolveNamed<IPuzzle>(puzzleNumber, out var puzzle))
             {
-                await mission.Prepare();
+                await puzzle.Prepare();
 
-                var solution1 = await mission.SolvePart1();
+                var solution1 = await puzzle.SolvePart1();
                 Console.WriteLine($"Part 1: {solution1}");
 
-                var solution2 = await mission.SolvePart2();
+                var solution2 = await puzzle.SolvePart2();
                 Console.WriteLine($"Part 2: {solution2}");
             }
             else
             {
-                Console.WriteLine("Mission not found.");
+                Console.WriteLine("Puzzle not found.");
             }
             Console.WriteLine();
         }

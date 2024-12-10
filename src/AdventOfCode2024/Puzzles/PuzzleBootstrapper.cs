@@ -2,10 +2,10 @@ using Autofac;
 
 namespace AdventOfCode2024.Puzzles;
 
-public static class MissionBootStrapper
+public static class PuzzleBootStrapper
 {
     public static void Register(ContainerBuilder builder)
     {
-        builder.RegisterType<ReconcileLocationLists>().Named<IPuzzle>("1");
+        builder.RegisterType<HistorianHysteria>().Named<IPuzzle>("1");
     }
 }
